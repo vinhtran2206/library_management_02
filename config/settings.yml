@@ -4,6 +4,11 @@ user:
   pass_minimum: 6
   phone_maximum: 10
   address_maximum: 200
+  gravatar_user: 50
+user_helper:
+  gravatar_length: 80
+  male: "Male"
+  female: "Female"
 publisher:
   name_maximum: 150
   description_maximum: 1500

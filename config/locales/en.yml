@@ -1,2 +1,86 @@
 en:
-  hello: "Hello world"
+  layouts:
+    header:
+      name: "Vim Story Library"
+      home: "Home"
+      help: "Help"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Log out"
+      login: "Log in"
+    footer:
+      about: "About"
+      contact: "Contact"
+      title_news: "News"
+    basetitle: "Vim Story Library"
+  #handle login
+  sessions:
+    new:
+      login: "Log In"
+      password: "Password"
+      sign_up: "Sign up now!"
+      new_user: "New user?"
+      remember_me: "Remember me on this computer"
+    create:
+      success_message: "You've been logged in successfully"
+      error_messages: "Invalid email/password combination"
+    destroy:
+      logout_messages: "You've been logged out"
+  #handle account
+  users:
+    new:
+      sign_up: "Sign up"
+      announce_new_html: "This will be a signup page for new users."
+      create_account: "Create my account"
+    create:
+      sign_up_success: "Welcome to the Vim Story!"
+    load_user:
+      error_messages: "This user could not be found"
+    edit:
+      title: "Edit user"
+      update: "Update your profile"
+      save: "Save changes"
+      gravatar_link: "http://gravatar.com/emails"
+      change: "change"
+      please_login: "Please log in."
+    update:
+      update_success: "Profile updated"
+    index:
+      title: "All users"
+    user:
+      delete: "delete"
+      confirm: "You sure?"
+    destroy:
+      destroy_succ: "User deleted"
+      destroy_failed: "Failed! User can't be deleted"
+  #handle index
+  static_pages:
+    home:
+      title: "Home"
+      h1: "Welcome to the Vim's Story"
+      announce_home_html: "This is the home page for the %{href} sample application."
+      link_detail: "Vim Story Library"
+      signup_alert: "Sign up now!"
+    about:
+      title: "About"
+      announce_about_html: "The %{tutorial} is a %{book} and %{screencast} to teach web development with %{rails}. This is the sample application for the tutorial."
+      tutorial_link: "http://www.railstutorial.org/"
+      tutorial_link_detail: "Vim Story Library"
+      book_link: "http://www.railstutorial.org/book"
+      book_link_detail: "book"
+      screencast_link: "http://screencasts.railstutorial.org/"
+      screencast_link_detail: "screencast series"
+      rails_link: "http://rubyonrails.org/"
+      rails_link_detail: "Ruby on Rails"
+    contact:
+      announce_about_html: "Contact the Vim Story Library about the Vim Story at the"
+      contact_link: "http://www.railstutorial.org/contact"
+      contact_link_detail: "contact page"
+  #Shared
+  shared:
+    form: "The form contains %{error_list}"
+    error:
+      one: "1 error"
+      other: "%{count} errors"
