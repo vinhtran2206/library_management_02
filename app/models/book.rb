@@ -24,13 +24,13 @@ class Book < ApplicationRecord
     where("books.name LIKE ?", "%#{search.strip}%") if search.present?
   }
 
-  mount_uploader :picture, PictureUploader
+  mount_uploader :image, PictureUploader
 
   private
 
   def picture_size
-    if picture.size > 5.megabytes
-      errors.add(:picture, "should be less than 5MB")
+    if image.size > Settings.book.error_image_maximun.megabytes
+      errors.add(:image, t(".error_image_maximun"))
     end
   end
 end
