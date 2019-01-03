@@ -6,3 +6,6 @@ User.create!(email: "vinhtran09121997@gmail.com",
   password: "123456",
   password_confirmation: "123456",
   role: 1)
+Author.create!(
+  name: "vim",
+  description: "Tran Ngoc Vim ...............................")

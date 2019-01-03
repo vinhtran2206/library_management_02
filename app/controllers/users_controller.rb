@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.newest.paginate page: params[:page],
-      per_page: Settings.user.per_page
+    @users = User.alphabet.search_user(params[:search]).newest
+      .paginate page: params[:page],per_page: Settings.user.per_page
   end
 
   def show; end

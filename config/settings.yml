@@ -23,3 +23,5 @@ book:
   amount_maximum: 50000
 author:
   name_maximum: 50
+paginate:
+  per_page: 20

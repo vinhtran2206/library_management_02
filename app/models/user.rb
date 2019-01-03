@@ -20,4 +20,8 @@ class User < ApplicationRecord
   enum role: {user: 0, admin: 1}
 
   scope :newest, ->{order created_at: :DESC}
+  scope :alphabet, ->{order full_name: :ASC}
+  scope :search_user, -> search {
+    where("users.full_name LIKE ?", "%#{search.strip}%") if search.present?
+  }
 end
