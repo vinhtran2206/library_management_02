@@ -1,0 +1,20 @@
+user:
+  name_maximum: 50
+  email_maximum: 255
+  pass_minimum: 6
+  phone_maximum: 10
+  address_maximum: 200
+publisher:
+  name_maximum: 150
+  description_maximum: 1500
+comment:
+  content_maximum: 1500
+Category:
+  name_maximum: 50
+book:
+  name_maximum: 150
+  pages_maximum: 5000
+  images_maximum: 1000
+  amount_maximum: 50000
+author:
+  name_maximum: 50
