@@ -86,6 +86,7 @@ en:
     error:
       one: "1 error"
       other: "%{count} errors"
+  #Authors
   authors:
     new:
       author: Authors
@@ -94,16 +95,36 @@ en:
       success_message: "You was added successfully"
     index:
       title: "All authors"
-      search: "search ........."
+      search: "Search ........."
       button_search: "Search"
     load_author:
       error_message: "No Authors"
     update:
       update: "Author was updated successfully"
       error: "This author could not be found"
-      select: "Please select parent of this author"
     edit:
       title: "Author"
       profile_updated: "Profile Updated"
       error: "This author could not be found"
+      edit: "Edit"
+  #Publisher
+  publishers:
+    new:
+      Publishers: Publishers
+      submit: Submit
+    create:
+      success_message: "You was added successfully"
+    index:
+      title: "All Publishers"
+      search: "Search ........."
+      button_search: "Search"
+    load_Publishers:
+      error_message: "No publishers"
+    update:
+      update: "Publisher was updated successfully"
+      error: "This Publisher could not be found"
+    edit:
+      title: "Publishers"
+      profile_updated: "Profile Updated"
+      error: "This publisher could not be found"
       edit: "Edit"

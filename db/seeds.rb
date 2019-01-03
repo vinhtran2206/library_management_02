@@ -9,3 +9,6 @@ User.create!(email: "vinhtran09121997@gmail.com",
 Author.create!(
   name: "vim",
   description: "Tran Ngoc Vim ...............................")
+Publisher.create!(
+  name: "ngoen",
+  description: "Ngoen Ngoen ...............................")

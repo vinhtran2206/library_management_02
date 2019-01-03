@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
   get "/newauthors", to: "authors#new" #Author
   get "/authors", to: "authors#index"
+  get "/newpublishers", to: "publishers#new"
+  get "/publishers", to: "publishers#index"
   resources :users
-  resources :authors
+  resources :authors, :publishers
 end
