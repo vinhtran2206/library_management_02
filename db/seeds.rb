@@ -41,3 +41,12 @@ Category.create!(
     category_id: 1
   )
 end
+Author.create!(
+  name: "vim",
+  description: "Tran Ngoc Vim ...............................")
+Publisher.create!(
+  name: "ngoen",
+  description: "Ngoen Ngoen ...............................")
+Category.create!(
+  name: "trinh tham"
+)
