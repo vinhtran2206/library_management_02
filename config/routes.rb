@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get "/authors", to: "authors#index"
   get "/newpublishers", to: "publishers#new"
   get "/publishers", to: "publishers#index"
+  get "/newbooks", to: "books#new"
+  get "/categories", to: "categories#index"
+  get "/newcategories", to: "categories#new"
   resources :users
-  resources :authors, :publishers
+  resources :authors, :publishers, :books, :categories
 end
