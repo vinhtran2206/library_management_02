@@ -12,3 +12,6 @@ Author.create!(
 Publisher.create!(
   name: "ngoen",
   description: "Ngoen Ngoen ...............................")
+Category.create!(
+  name: "trinh tham"
+)

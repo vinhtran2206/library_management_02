@@ -8,7 +8,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new authors_params
     if @author.save
-      flash[:success] = t ".sign_up_success"
+      flash[:success] = t ".success_message"
       redirect_to @author
     else
       render :new
