@@ -1,0 +1,8 @@
+<div class="center jumbotron">
+  <h1><%= t(".h1") %></h1>
+  <h2>
+    <%= t(".announce_home_html", href: link_to(t(".link_detail"),
+      "https://www.facebook.com/profile.php?id=100004416785306")) %>
+  </h2>
+  <%= link_to t(".signup_alert"), signup_path, class: "btn btn-lg btn-primary" %>
+</div>
