@@ -49,6 +49,8 @@ en:
       update_success: "Profile updated"
     index:
       title: "All users"
+      search: "search ........."
+      button_search: "Search"
     user:
       delete: "delete"
       confirm: "You sure?"
@@ -84,3 +86,24 @@ en:
     error:
       one: "1 error"
       other: "%{count} errors"
+  authors:
+    new:
+      author: Authors
+      submit: Submit
+    create:
+      success_message: "You was added successfully"
+    index:
+      title: "All authors"
+      search: "search ........."
+      button_search: "Search"
+    load_author:
+      error_message: "No Authors"
+    update:
+      update: "Author was updated successfully"
+      error: "This author could not be found"
+      select: "Please select parent of this author"
+    edit:
+      title: "Author"
+      profile_updated: "Profile Updated"
+      error: "This author could not be found"
+      edit: "Edit"
