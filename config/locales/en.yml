@@ -100,7 +100,7 @@ en:
     load_author:
       error_message: "No Authors"
     update:
-      update: "Author was updated successfully"
+      update_success: "Author was updated successfully"
       error: "This author could not be found"
     edit:
       title: "Author"
@@ -121,7 +121,7 @@ en:
     load_Publishers:
       error_message: "No publishers"
     update:
-      update: "Publisher was updated successfully"
+      update_success: "Publisher was updated successfully"
       error: "This Publisher could not be found"
     edit:
       title: "Publishers"
@@ -142,7 +142,7 @@ en:
     load_books:
       error_message: "No books"
     update:
-      update: "book was updated successfully"
+      update_success: "book was updated successfully"
       error: "This book could not be found"
     edit:
       title: "books"
@@ -163,7 +163,7 @@ en:
     load_category:
       error_message: "No Categories"
     update:
-      update: "Category was updated successfully"
+      update_success: "Category was updated successfully"
       error: "This Category could not be found"
     edit:
       title: "Category"

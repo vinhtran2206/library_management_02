@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new categories_params
     if @category.save
-      flash[:success] = t ".sign_up_success"
+      flash[:success] = t ".success_message"
       redirect_to @category
     else
       render :new
