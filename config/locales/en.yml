@@ -149,6 +149,18 @@ en:
       profile_updated: "Profile Updated"
       error: "This book could not be found"
       edit: "Edit"
+    book_row:
+      author: "Author: %{num}"
+      see_more: "See_more: "
+      pages: "Pages: %{num}"
+      image: "Image"
+    modal:
+      author: "Author: "
+      pages: "Pages: "
+      category: "Category: "
+      publisher: "Publisher: "
+    book:
+      error_image_maximun: "should be less than 5MB"
   #Categories
   categories:
     new:
