@@ -79,7 +79,7 @@ class BorrowDetailsController < ApplicationController
   end
 
   def find_borrow_detail
-    @detail = borrowDetail.find_by book_id: params[:borrow_detail][:book_id]
+    @detail = BorrowDetail.find_by book_id: params[:borrow_detail][:book_id]
     return if @detail
     flash[:danger] = t ".no_detail"
     redirect_to root_path

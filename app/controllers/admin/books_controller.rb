@@ -11,7 +11,7 @@ class Admin::BooksController < ApplicationController
     @book = Book.new books_params
     if @book.save
       flash[:success] = t ".success_message"
-      redirect_to @book
+      redirect_to admin_books_path
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Admin::BooksController < ApplicationController
     else
       flash[:danger] = t ".failed"
     end
-    redirect_to authors_path
+    redirect_to admin_books_path
   end
 
   def index
@@ -45,7 +45,7 @@ class Admin::BooksController < ApplicationController
   def update
     if @book.update_attributes books_params
       flash[:success] = t ".update_success"
-      redirect_to @book
+      redirect_to admin_books_path
     else
       render :edit
     end
