@@ -1,4 +1,4 @@
-<%= form_for(@book) do |f| %>
+<%= form_for @book, url: yield(:url) do |f| %>
   <%= render "shared/error_book", object: @book%>
 
   <%= f.label :name %>
