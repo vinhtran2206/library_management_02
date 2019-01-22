@@ -27,6 +27,8 @@ module SessionsHelper
 
   def log_out
     session.delete :user_id
+    session.delete :borrow_id
+
   end
 
   def redirect_back_or default
@@ -36,5 +38,9 @@ module SessionsHelper
 
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def current_user? user
+    user == current_user
   end
 end
