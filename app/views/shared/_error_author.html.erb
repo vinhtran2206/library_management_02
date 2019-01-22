@@ -1,11 +1,11 @@
-<% if object.errors.any? %>
+<% if @author.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
       <%= t("shared.form", error_list: t("shared.error",
-        count: object.errors.count)) %>.
+        count: @author.errors.count)) %>.
     </div>
     <ul>
-    <% object.errors.full_messages.each do |msg| %>
+    <% @author.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

@@ -1,11 +1,5 @@
 <% provide :title, t(".title") %>
-<h1><%= t(".title") %></h1><hr>
-<% if current_user.admin? %>
-  <%= link_to new_user_path, class: "btn btn-danger" do %>
-    <span class="glyphicon glyphicon-plus">&nbsp;<%= t(".add") %></span>
-  <% end %>
-<% end %>
-<hr>
+<h1><%= t(".title") %></h1>
 <div class="input-group search_inline">
   <%= form_tag(users_path, method: :get) do %>
     <%= text_field_tag :search, params[:search],
@@ -15,23 +9,6 @@
   <% end %>
 </div>
 <%= will_paginate %>
-<div class="row">
-  <div class="col-md-8">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="text-justify active" width="30%"><%= t ".name" %></th>
-          <th class="text-justify active" width="15%"><%= t ".gender" %></th>
-          <th class="text-justify active" width="25%"><%= t ".address" %></th>
-          <th class="text-justify active" width="25%"><%= t ".phonenumber" %></th>
-          <% if current_user.admin? %>
-            <th class="text-right active"><%= t ".action" %></th>
-          <% end %>
-        </tr>
-      </thead>
-    </table>
-  </div>
-</div>
 <ul class="users">
   <%= render @users %>
 </ul>
