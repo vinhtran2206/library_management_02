@@ -36,8 +36,8 @@ class Admin::BooksController < ApplicationController
   end
 
   def index
-    @books = Book.alphabet.search_book(params[:search])
-      .paginate page: params[:page],per_page: Settings.book.per_page
+    @search = Book.ransack (params[:q])
+    @books = @search.result.alphabet.paginate page: params[:page],per_page: Settings.book.per_page
     #new khong tao ra relationship nhung build thi yes
     @borrow_detail = current_borrow.borrow_details.build
   end

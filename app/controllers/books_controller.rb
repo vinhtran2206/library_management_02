@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   include BooksHelper
 
-  before_action :load_book, only: %i(show edit update destroy)
+  before_action :load_book, only: :show
 
   def show
     respond_to do |format|
@@ -10,19 +10,13 @@ class BooksController < ApplicationController
     end
   end
 
-  def edit; end
-
   def index
-    @books = Book.alphabet.search_book(params[:search])
-      .paginate page: params[:page],per_page: Settings.book.per_page
+    @q = Book.ransack (params[:q])
+    @books = @q.result.alphabet.paginate page: params[:page],per_page: Settings.book.per_page
     @borrow_detail = current_borrow.borrow_details.build
   end
 
   private
-  def books_params
-    params.require(:book).permit :name, :description, :num_of_pages, :image,
-      :amount, :author_id, :category_id, :publisher_id
-  end
 
   def load_book
     @book = Book.find_by id: params[:id]

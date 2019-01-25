@@ -1,5 +1,5 @@
 <%= form_for @book, url: yield(:url) do |f| %>
-  <%= render "shared/error_book", object: @book%>
+  <%= render "shared/error_messages", object: @book%>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
