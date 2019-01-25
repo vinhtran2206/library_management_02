@@ -106,6 +106,8 @@ en:
       search: "Search ........."
       button_search: "Search"
       add: "Add New Author"
+      description: "Description"
+      name: "Name"
     load_author:
       error_message: "No Authors"
     destroy:
@@ -134,6 +136,8 @@ en:
       search: "Search ........."
       button_search: "Search"
       add: "Add New Publisher"
+      description: "Description"
+      name: "Name"
     destroy:
       success: "The borrow was deleted successfully"
       failed: "Failed!! The borrow couldn't be deleted"

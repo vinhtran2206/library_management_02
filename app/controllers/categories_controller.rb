@@ -29,7 +29,8 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.alphabet.search_categories(params[:search])
+    @search = Category.ransack (params[:q])
+    @categories = @search.result.alphabet.search_categories(params[:search])
       .paginate page: params[:page],per_page: Settings.paginate.per_page
   end
 

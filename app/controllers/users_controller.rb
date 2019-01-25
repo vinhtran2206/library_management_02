@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.alphabet.search_user(params[:search]).newest
+    @search = User.ransack params[:q]
+    @users = @search.result.alphabet.search_user(params[:search]).newest
       .paginate page: params[:page],per_page: Settings.user.per_page
     respond_to do |format|
       format.html

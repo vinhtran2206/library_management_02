@@ -20,7 +20,8 @@ class PublishersController < ApplicationController
   def edit; end
 
   def index
-    @publishers = Publisher.alphabet.search_publisher(params[:search])
+    @search = Publisher.ransack (params[:q])
+    @publishers = @search.result.alphabet.search_publisher(params[:search])
       .paginate page: params[:page],per_page: Settings.paginate.per_page
   end
 

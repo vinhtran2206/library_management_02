@@ -2,9 +2,8 @@
   <div class="col-md-12">
     <table class="table table-hover">
       <tr>
-        <td width="30%">
-          <%= link_to publisher.name, publisher %>
-        </td>
+        <td width="27%"><%=  publisher.name %></td>
+        <td width="30%"><%=  publisher.description %></td>
         <% if logged_in? && current_user.admin? %>
         <td class="text-right">
           <%= link_to t(".delete"), publisher,

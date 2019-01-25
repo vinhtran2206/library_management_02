@@ -11,8 +11,8 @@ class BooksController < ApplicationController
   end
 
   def index
-    @q = Book.ransack (params[:q])
-    @books = @q.result.alphabet.paginate page: params[:page],per_page: Settings.book.per_page
+    @search = Book.ransack (params[:q])
+    @books = @search.result.alphabet.paginate page: params[:page],per_page: Settings.book.per_page
     @borrow_detail = current_borrow.borrow_details.build
   end
 

@@ -34,7 +34,8 @@ class AuthorsController < ApplicationController
   end
 
   def index
-    @authors = Author.alphabet.search_author(params[:search])
+    @search = Author.ransack (params[:q])
+    @authors = @search.result.alphabet.search_author(params[:search])
       .paginate page: params[:page],per_page: Settings.author.per_page
   end
 

@@ -1,7 +1,7 @@
 <%= render template: "static_pages/home" %>
 <% provide :title, t(".title") %>
 <div class="input-group search_inline">
-  <%= search_form_for  @q, url: books_path do |f| %>
+  <%= search_form_for  @search, url: books_path do |f| %>
       <%= f.text_field :name_cont,
     placeholder: t(".search"), class: "form-control search_input" %>
       <%= f.submit t(".button_search"), class: "btn btn-primary btn_search"%>
