@@ -1,4 +1,5 @@
 class BorrowsController < ApplicationController
+  load_and_authorize_resource
   before_action :load_borrow, only: %i(show edit update destroy)
   before_action :check_time_borrow, only: %i(update)
   before_action :load_borrow_details, only: %i(index)

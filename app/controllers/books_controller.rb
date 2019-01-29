@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  load_and_authorize_resource
   include BooksHelper
 
   before_action :load_book, only: :show

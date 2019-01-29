@@ -19,6 +19,9 @@ class User < ApplicationRecord
 
   enum role: {user: 0, admin: 1}
 
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable
+
   scope :newest, ->{order created_at: :DESC}
   scope :alphabet, ->{order full_name: :ASC}
   scope :search_user, -> search {

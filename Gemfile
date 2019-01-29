@@ -10,6 +10,7 @@ gem "cancancan", "~> 2.0"
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
+gem "devise", "~> 4.1"
 gem "faker"
 gem "i18n-js"
 gem "jbuilder", "~> 2.5"
@@ -49,7 +50,7 @@ group :test do
 end
 
 group :production do
-  gem "pg",             "~> 0.18"
+  gem "pg", "~> 0.18"
   gem "rails_12factor", "0.0.2"
 end
 

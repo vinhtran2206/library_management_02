@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   include SessionsHelper
   include UsersHelper
 
+  load_and_authorize_resource
   before_action :load_user, only: %i(show destroy)
   before_action :logged_in_user, except: %i(new create show)
   before_action :correct_user, only: %i(edit update)

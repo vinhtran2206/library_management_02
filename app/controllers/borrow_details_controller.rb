@@ -1,4 +1,5 @@
 class BorrowDetailsController < ApplicationController
+  load_and_authorize_resource
   before_action :load_borrow, only: %i(create update destroy)
   before_action :load_borrow_detail, only: %i(update destroy)
   before_action :check_quantity, only: :update

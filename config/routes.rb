@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get "carts/show"
+  devise_for :users
+
   default_url_options host: "localhost:3000"
   root "books#index"
   get "users/show"

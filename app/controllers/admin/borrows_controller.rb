@@ -1,4 +1,5 @@
 class Admin::BorrowsController < ApplicationController
+  load_and_authorize_resource
   before_action :load_borrow, except: %i(update index)
   before_action :check_time_borrow, only: %i(update)
   before_action :load_borrow_details, only: %i(index)
