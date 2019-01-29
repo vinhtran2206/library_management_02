@@ -4,9 +4,6 @@ class BorrowDetailsController < ApplicationController
   before_action :check_quantity, only: :update
 
   def create
-    #tao ra tang borrow detail theo borrow theo book_id sau do so sanh no voi
-    #cai hien tai, neu no trung thi in ra (co nghia la 1 lan chi duoc thue 1 cuon sach
-    #thoi , trung thi hien thong bao)
     @borrow_detail = @borrow.borrow_details.find_by book_id:
       borrow_detail_params[:book_id]
     if @borrow_detail
