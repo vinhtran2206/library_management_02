@@ -14,7 +14,8 @@
         <% end %>
         <% if logged_in? && current_user.admin?%>
           <li><%= link_to t(".manage_borrow"), admin_borrows_path %></li>
-        <% else %>
+        <% end %>
+        <% if logged_in? && !current_user.admin?%>
           <li><%= link_to t(".manage_borrow"), borrows_path %></li>
         <% end %>
       </ul>
