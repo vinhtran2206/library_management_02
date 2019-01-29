@@ -11,7 +11,22 @@
       </div>
       <div class="panel-footer text-center">
         <%= form_for borrow_detail, remote: true do |f| %>
-          <%= f.hidden_field :number, value: 1 %>
+          <%= f.hidden_field :number, value: Settings.header.number_book %>
+          <%= f.hidden_field :book_id, value: book.id %>
+          <% if book.amount.zero? %>
+            <%= f.submit t(".empty_book"), class: "btn btn-primary", disabled: true %>
+          <% elsif !logged_in? %>
+            <%= link_to t(".login_require"), login_path, class: "btn btn-primary" %>
+          <% elsif current_user.admin? %>
+            <%= f.submit t(".admin_require"), class: "btn btn-primary", disabled: true %>
+          <% else %>
+            <%= f.submit t(".borrow"), class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="panel-footer text-center">
+        <%= form_for borrow_detail, remote: true do |f| %>
+          <%= f.hidden_field :number, value: Settings.book.number.min_length %>
           <%= f.hidden_field :book_id, value: book.id %>
           <% if book.amount.zero? %>
             <%= f.submit t(".empty_book"), class: "btn btn-primary", disabled: true %>

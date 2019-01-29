@@ -12,10 +12,10 @@
         <% if logged_in? %>
           <li><%= link_to t(".users"), users_path %></li>
         <% end %>
-        <% if logged_in? && current_user.admin?%>
+        <% if logged_in? && current_user.admin? %>
           <li><%= link_to t(".manage_borrow"), admin_borrows_path %></li>
         <% end %>
-        <% if logged_in? && !current_user.admin?%>
+        <% if logged_in? && !current_user.admin? %>
           <li><%= link_to t(".manage_borrow"), borrows_path %></li>
         <% end %>
       </ul>
