@@ -194,6 +194,7 @@ en:
       publisher: "Publisher: "
     book:
       error_image_maximun: "should be less than 5MB"
+
   #Categories
   categories:
     new:

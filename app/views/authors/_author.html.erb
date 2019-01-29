@@ -5,7 +5,7 @@
           <td width="30%">
             <%= link_to author.name, author %>
           </td>
-          <% if current_user.admin? %>
+          <% if logged_in? && current_user.admin? %>
           <td class="text-right">
             <%= link_to t(".delete"), author,
               method: :delete, data: {confirm: t(".confirm")} %>
