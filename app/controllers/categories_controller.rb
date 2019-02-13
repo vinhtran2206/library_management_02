@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
-  load_and_authorize_resource
   before_action :load_category, only: %i(show edit update destroy)
+
+  authorize_resource
 
   def new
     @category = Category.new
@@ -31,8 +32,7 @@ class CategoriesController < ApplicationController
 
   def index
     @search = Category.ransack (params[:q])
-    @categories = @search.result.alphabet.search_categories(params[:search])
-      .paginate page: params[:page],per_page: Settings.paginate.per_page
+    @categories = @search.result.alphabet.paginate page: params[:page],per_page: Settings.paginate.per_page
   end
 
   def update

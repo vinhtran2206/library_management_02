@@ -1,6 +1,8 @@
 class AuthorsController < ApplicationController
-  load_and_authorize_resource
+
   before_action :load_author, only: %i(show edit update destroy)
+
+  authorize_resource
 
   def new
     @author = Author.new
@@ -36,8 +38,7 @@ class AuthorsController < ApplicationController
 
   def index
     @search = Author.ransack (params[:q])
-    @authors = @search.result.alphabet.search_author(params[:search])
-      .paginate page: params[:page],per_page: Settings.author.per_page
+    @authors = @search.result.alphabet.paginate page: params[:page],per_page: Settings.author.per_page
   end
 
   def update

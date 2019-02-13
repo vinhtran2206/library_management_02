@@ -1,7 +1,7 @@
 <% provide :title, t(".title") %>
 <h1><%= t(".title") %></h1>
 <hr>
-<% if logged_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <%= link_to new_category_path, class: "btn btn-danger" do %>
     <span class="glyphicon glyphicon-plus">&nbsp;<%= t(".add") %></span>
   <% end %>
@@ -21,7 +21,7 @@
       <thead>
         <tr>
           <th class="active" width="30%"><%= sort_link(@search, :name, t(".name")) %></th>
-          <% if logged_in? && current_user.admin? %>
+          <% if user_signed_in? && current_user.admin? %>
             <th class="text-right active"><%= t ".action" %></th>
           <% end %>
         </tr>

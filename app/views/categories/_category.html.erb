@@ -3,7 +3,7 @@
       <table class="table table-hover">
         <tr>
           <td width="30%"><%= category.name %></td>
-          <% if logged_in? && current_user.admin? %>
+          <% if user_signed_in? && current_user.admin? %>
           <td class="text-right">
             <%= link_to t(".delete"), category,
               method: :delete, data: {confirm: t(".confirm")} %>

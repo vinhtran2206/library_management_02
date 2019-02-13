@@ -1,8 +1,9 @@
 class BorrowDetailsController < ApplicationController
-  load_and_authorize_resource
   before_action :load_borrow, only: %i(create update destroy)
   before_action :load_borrow_detail, only: %i(update destroy)
   before_action :check_quantity, only: :update
+
+  authorize_resource
 
   def create
     @borrow_detail = @borrow.borrow_details.find_by book_id:
@@ -46,7 +47,7 @@ class BorrowDetailsController < ApplicationController
     @borrow = current_borrow
     return if @borrow
     flash[:danger] = t ".must_login"
-    redirect_to login_path
+    redirect_to new_user_session_path
   end
 
   def load_borrow_detail

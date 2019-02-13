@@ -1,10 +1,11 @@
 class Admin::BorrowsController < ApplicationController
-  load_and_authorize_resource
   before_action :load_borrow, except: %i(update index)
   before_action :check_time_borrow, only: %i(update)
   before_action :load_borrow_details, only: %i(index)
   before_action :is_admin?, only: %i(accept_request deny_request)
   before_action :check_quantity, only: %i(accept_request)
+
+  authorize_resource
 
   def show
     @borrow_details = BorrowDetail.load_borrow_details params[:id]

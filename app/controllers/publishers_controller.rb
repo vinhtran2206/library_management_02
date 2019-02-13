@@ -1,6 +1,7 @@
 class PublishersController < ApplicationController
-  load_and_authorize_resource
   before_action :load_publisher, only: %i(show edit update)
+
+  authorize_resource
 
   def new
     @publisher = Publisher.new
@@ -22,8 +23,7 @@ class PublishersController < ApplicationController
 
   def index
     @search = Publisher.ransack (params[:q])
-    @publishers = @search.result.alphabet.search_publisher(params[:search])
-      .paginate page: params[:page],per_page: Settings.paginate.per_page
+    @publishers = @search.result.alphabet.paginate page: params[:page],per_page: Settings.paginate.per_page
   end
 
   def update

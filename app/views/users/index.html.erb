@@ -1,6 +1,6 @@
 <% provide :title, t(".title") %>
 <h1><%= t(".title") %></h1><hr>
-<% if logged_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <%= link_to new_user_path, class: "btn btn-danger" do %>
     <span class="glyphicon glyphicon-plus">&nbsp;<%= t(".add") %></span>
   <% end %>
@@ -21,7 +21,7 @@
         <tr>
           <th class="text-justify active" width="30%"><%= sort_link(@search, :full_name, t(".name")) %></th>
           <th class="text-justify active" width="15%"><%= sort_link(@search, :gender, t(".gender")) %></th>
-          <% if logged_in? && current_user.admin? %>
+          <% if user_signed_in? && current_user.admin? %>
             <th class="text-justify active" width="25%"><%= sort_link(@search, :address, t(".address")) %></th>
             <th class="text-justify active" width="25%"><%= sort_link(@search, :phone_number, t(".phone_number")) %></th>
             <th class="text-right active"><%= t ".action" %></th>

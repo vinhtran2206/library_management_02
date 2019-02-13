@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
   before_action :load_book, only: %i(index create)
+
+  authorize_resource
 
   def create
     @comment = current_user.comments.build comments_params
@@ -18,8 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.paginate page: params[:page],
-      per_page: Settings.paginate.per_page
+    @comments = Comment.paginate page: params[:page], per_page: Settings.paginate.per_page
     respond_to do |format|
       format.html
       format.js
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
   end
 
   private
-  def comments_params
+  def comment_params
     params.require(:comment).permit :book_id, :user_id, :content
   end
 

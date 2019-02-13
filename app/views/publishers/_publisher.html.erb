@@ -4,7 +4,7 @@
       <tr>
         <td width="27%"><%=  publisher.name %></td>
         <td width="30%"><%=  publisher.description %></td>
-        <% if logged_in? && current_user.admin? %>
+        <% if user_signed_in? && current_user.admin? %>
         <td class="text-right">
           <%= link_to t(".delete"), publisher,
             method: :delete, data: {confirm: t(".confirm")} %>

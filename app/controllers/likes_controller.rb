@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
-  load_and_authorize_resource
   before_action :load_like, only: %i(destroy)
+
+  authorize_resource
 
   def create
     @like = current_user.likes.build book_id: params[:book_id]

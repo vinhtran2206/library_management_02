@@ -6,7 +6,7 @@
          <td class="text-justify" width="15%">
             <%=user.gender%>
           </td>
-          <% if logged_in? && current_user.admin? %>
+          <% if user_signed_in? && current_user.admin? %>
             <td class="text-justify" width="24%"><%=user.address%></td>
             <td class="text-justify" width="24%"><%=user.phone_number%></td>
             <td class="text-right">

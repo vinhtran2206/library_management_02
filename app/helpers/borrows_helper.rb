@@ -3,7 +3,7 @@ module BorrowsHelper
     borrow = Borrow.find_by id: session[:borrow_id]
     if session[:borrow_id].present? && borrow.present?
       borrow
-    elsif logged_in?
+    elsif user_signed_in?
       @current_user.borrows.new
     else
       Borrow.new

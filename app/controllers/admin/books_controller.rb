@@ -1,7 +1,8 @@
 class Admin::BooksController < ApplicationController
   include BooksHelper
-  load_and_authorize_resource
-  before_action :load_book, only: %i(show edit update destroy)
+  before_action :load_book, except: %i(new create index)
+
+  authorize_resource
 
   def new
     @book = Book.new
