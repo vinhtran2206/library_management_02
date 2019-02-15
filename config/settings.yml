@@ -28,3 +28,5 @@ author:
   name_maximum: 50
 paginate:
   per_page: 20
+header:
+  number_book: 1
