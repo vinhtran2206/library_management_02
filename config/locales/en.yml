@@ -374,6 +374,7 @@ en:
           error: "The request couldn't be found"
           permission: "You dont have permission to access"
           run_out: "Failed! The book isn't enough quantity to borrow!! Please deny this request."
+          raise: "Opp! Has errors"
         deny_request:
           success: "The request was denied successfully"
           failed: "The request couldn't be denied"

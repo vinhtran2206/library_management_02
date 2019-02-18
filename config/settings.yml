@@ -30,3 +30,6 @@ paginate:
   per_page: 20
 header:
   number_book: 1
+admin:
+  form:
+    image_type: "image/png,image/jpeg"
