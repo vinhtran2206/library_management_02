@@ -3,7 +3,7 @@
     <%= link_to t(".name"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav">
-        <% if logged_in? && current_user.admin?%>
+        <% if logged_in? && current_user.admin? %>
           <li><%= link_to t(".book"), admin_books_path %></li>
         <% end %>
         <li><%= link_to t(".author"), authors_path %></li>
