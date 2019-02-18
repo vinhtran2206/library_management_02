@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  before_action :load_author, only: %i(show edit update destroy)
+  before_action :load_author, except: %i(new create index)
 
   def new
     @author = Author.new
@@ -15,7 +15,12 @@ class AuthorsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   def edit; end
 
