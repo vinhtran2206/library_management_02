@@ -9,6 +9,8 @@ class Book < ApplicationRecord
   belongs_to :category
   belongs_to :author
 
+  delegate :name, to: :category, prefix: :category
+
   validates :name, presence: true,
     length: { maximum: Settings.book.name_maximum }
   validates :num_of_pages, presence: true,
