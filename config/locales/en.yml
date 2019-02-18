@@ -293,6 +293,15 @@ en:
       empty_2: " and add some items to your cart."
       confirm_button: "Confirm borrow"
       go_back: "Go Back"
+  likes:
+    create:
+      success: "You was liked successfully"
+      failed: "Failed!! can't Unlike"
+    load_author:
+      error_message: "No Like"
+    destroy:
+      success: "Unlike successfully"
+      failed: "Failed!! can't Unlike"
   #Admin
   admin:
       books:

@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2019_01_03_083212) do
   create_table "borrows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "note"
-    t.datetime "date_borrow", default: "2019-02-18 02:05:55"
-    t.datetime "end_date_borrow", default: "2019-02-25 02:05:55"
+    t.datetime "date_borrow", default: "2019-01-22 07:39:05"
+    t.datetime "end_date_borrow", default: "2019-01-29 07:39:05"
     t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
